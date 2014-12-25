@@ -2,14 +2,14 @@
 
 use strict;
 
-print __PACKAGE__, "\n"; # main    Perl�ϻ��ꤷ�ʤ���̾�����֡ʥѥå�����̾�ˤ�main�ˤʤ�ޤ���
+print __PACKAGE__, "\n"; # main    Perlは指定しないと名前空間（パッケージ名）はmainになります。
 
 package Car;
 
 print __PACKAGE__, "\n"; # Car
 
-# Perl�ǥ��֥������Ȥ���ˤ� bless �ǡ��� �ѥå�����̾ �Ȥ��ޤ���
-# ������֤��᥽�åɤ����󥹥ȥ饯���ˤʤ�ޤ����ʤ�뤤�Ǥ���
+# Perlでオブジェクトを作るには bless データ パッケージ名 とします。
+# これを返すメソッドがコンストラクタになります。（ゆるいです）
 sub new {
     my $package = __PACKAGE__;
     my $hash_reference = {};

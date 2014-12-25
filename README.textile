@@ -1,27 +1,33 @@
-h1. ���沼
+h1. 上中下
 
-���ܤ�ؤӤޤ���
+基本を学びます。
 
-h2. �¹ԴĶ�
+h2. 実行環境
 
-OS��°��Perl��Ȥ����Ϥ���򡢼������Ѱդ������perlbrew��plenv���Ȥ��ޤ���
+OS付属のPerlを使う場合はそれを、自前で用意する場合はperlbrewやplenvが使えます。
 
-ɬ�פʥ⥸�塼��� cpanm ���ޥ�ɤ�Ȥ��ޤ���
-���äƤ��ʤ����ϲ��򻲹ͤ�����Ƥ���������
+必要なモジュールは cpanm コマンドを使います。
+入っていない場合は下を参考に入れてください。
 http://search.cpan.org/perldoc?App::cpanminus#INSTALLATION
 
 % cpanm Plack Template
 
-h2. �ǡ�����¤
+h2. データ構造
 
-�¹Ԥ��ơ���ǧ���ơ�Ϯ�äƤߤƤ���������
+実行して、確認して、弄ってみてください。
 
-h2. PSGI������WebApp
+* スカラー     script/data01scalar.pl
+* 配列         script/data02array.pl
+* ハッシュ     script/data03hash.pl
+* オブジェクト script/data04object.pl
+
+h2. PSGI形式のWebApp
 
 % plackup hello_psgi.psgi -R hello_psgi.psgi          
 
-h2. �嵭�Τ�Τ�TT���Ȥ߹��ߤޤ�����
+h2. 上記のものにTTを組み込みました。
 
-TT�γ�ǧ�������Ѥ�Ϯ�äƤߤƤ���������
+TTの確認と練習用に弄ってみてください。
+tmpl/index.html を編集して確認してみたりしてください。
 
 % plackup tt_and_web.psgi -R tt_and_web.psgi          
