@@ -1,0 +1,66 @@
+<html>
+  [% INCLUDE "inc/header.html" %]
+  <body>
+    <hr />
+      Hello World
+
+    <hr />
+      [% data_string %]
+      <br />
+      <!--
+	次を参照 http://search.cpan.org/perldoc?Template::Manual::VMethods
+	Scalar Virtual Methods のものが使えます。
+      -->
+      [% data_string.length %]
+
+    <hr />
+      [% data_arrayref %]
+      <br />
+      <!--
+	次を参照 http://search.cpan.org/perldoc?Template::Manual::VMethods
+	List Virtual Methods のものが使えます。
+      -->
+      <ul>
+	[% FOR item = data_arrayref %]
+	  <li>[% item %]</li>
+	[% END %]
+      </ul>
+
+    <hr />
+      [% data_hashref %]
+      <br />
+      <!--
+	次を参照 http://search.cpan.org/perldoc?Template::Manual::VMethods
+	Hash Virtual Methods のものが使えます。
+
+	data_hashref.one は $data_hashref->{one} 相当です。
+      -->
+      [% data_hashref.one %]
+      <br />
+      [% data_hashref.two %]
+
+    <hr />
+      [% data_object %]
+      <br />
+      <!--
+	data_hashref.next は $data_hashref->next() 相当です。
+      -->
+      [% data_object.next %]<br />
+      [% data_object.next %]<br />
+      [% data_object.next %]<br />
+      [% data_object.next(1) %]<br />
+      [% data_object.next %]<br />
+      [% data_object.next %]<br />
+
+    <hr />
+      <!--
+	data_coderef は $data_coderef->() 相当です。
+      -->
+      [% data_coderef %]<br />
+      [% data_coderef %]<br />
+      [% data_coderef %]<br />
+      [% data_coderef %]<br />
+
+    [% INCLUDE "inc/footer.html" %]
+  </body>
+</html>
