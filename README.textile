@@ -31,3 +31,31 @@ TTの確認と練習用に弄ってみてください。
 tmpl/index.html を編集して確認してみたりしてください。
 
 % plackup tt_and_web.psgi -R tt_and_web.psgi          
+
+h2. SledgeをPSGIで
+
+% git clone https://github.com/livedoor/Sledge.git
+% cd Sledge
+% vi eg/prereq-modules
+<pre>
+    Sledge::PSGIの場合は次のモジュールは不要なので行を削除します。
+    mod_perlをインストールをせずに進めるためです。
+	Apache::Request
+	Apache::Reload
+<pre>
+% perl Makefile.PL
+% make install
+% cd ..
+
+% cpanm Module::Install::AuthorTests
+% cpanm Module::Install::TestBase
+% cpanm String::CamelCase
+% cpanm UNIVERSAL::require
+% cpanm LWP::Protocol::https
+% cpanm https://github.com/mala/Sledge-PSGI/archive/master.zip
+
+% cpanm Sledge::Utils
+% cpanm Devel::Symdump
+% cpanm Text::MicroTemplate
+
+% plackup sledge_server.psgi -R lib
