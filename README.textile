@@ -42,7 +42,7 @@ h2. SledgeをPSGIで
     mod_perlをインストールをせずに進めるためです。
 	Apache::Request
 	Apache::Reload
-<pre>
+</pre>
 % perl Makefile.PL
 % make install
 % cd ..
