@@ -31,6 +31,12 @@ sub create_template {
 
     require Sledge::Template::TT;
     return Sledge::Template::TT->new($file, $self);
+
+    # TTからXslateに切り替える場合
+    # % cpanm Text::Xslate::Bridge::TT2Like
+    # % cpanm Sledge::Template::Xslate;
+    #require Sledge::Template::Xslate;
+    #return Sledge::Template::Xslate->new($file, $self);
 }
 
 1;
