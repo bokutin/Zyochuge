@@ -29,8 +29,8 @@ sub create_manager {
 sub create_template {
     my ($self, $file) = @_;
 
-    #require Sledge::Template::TT;
-    #return Sledge::Template::TT->new($file, $self);
+    require Sledge::Template::TT;
+    return Sledge::Template::TT->new($file, $self);
 
     # TTからXslateに切り替える場合
     # % cpanm Text::Xslate::Bridge::TT2Like
